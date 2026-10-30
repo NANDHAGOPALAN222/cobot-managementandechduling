@@ -1,0 +1,18 @@
+{
+  "name": "smart-cobot-factory-mern",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smart Cobot Factory Management System — MERN stack (MongoDB, Express, React, Node) with Socket.IO",
+  "scripts": {
+    "setup": "npm install && npm install --prefix server && npm install --prefix client && node scripts/setup-env.js",
+    "seed": "npm run seed --prefix server",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently -n API,WEB -c yellow,cyan \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix client",
+    "start": "npm run build && npm start --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
